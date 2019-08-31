@@ -23,18 +23,18 @@ app.use('/api/folders', foldersRouter)
 
 app.get('/', (req, res) => {
 req.app.get('db').from('notes').select('*').then(console.log)
-  res.send('Welcome to Noteful!')
+  res.send('Hello, world!')
 })
 
-function errorHandler(error, req, res, next) {
-  let response
-  if (process.env.NODE_ENV === 'production') {
-  response = { error: { message: 'server error' } }
-  } else {
-    console.error(error)
-  response = { message: error.message, error }
-  }
-  res.status(500).json(response)
-}
+// function errorHandler(error, req, res, next) {
+//   let response
+//   if (process.env.NODE_ENV === 'production') {
+//   response = { error: { message: 'server error' } }
+//   } else {
+//     console.error(error)
+//   response = { message: error.message, error }
+//   }
+//   res.status(500).json(response)
+// }
  
 module.exports = app

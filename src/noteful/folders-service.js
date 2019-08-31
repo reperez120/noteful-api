@@ -11,7 +11,7 @@ const foldersService = {
       newFolder = {
         folder_name: newFolder.name,
         id: newFolder.id,
-        contents: newFolder.contents
+        contents: newFolder.notes
       }
       console.log(newFolder)
   

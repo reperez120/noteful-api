@@ -14,6 +14,10 @@ db('folders')
   .join('notes', 'folders.id', '=', 'notes.folder')
   .select('*').then(console.log)
 
+  app.get('/api/*', (req, res) => {
+    res.json({ok: true});
+  });
+  
 
 app.listen(PORT, () => {
   console.log(`Server listening at ${PORT}`)

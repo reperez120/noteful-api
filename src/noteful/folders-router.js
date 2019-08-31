@@ -7,7 +7,7 @@ const bodyParser = express.json()
 const serializeFolder = folder => ({
   id: folder.id,
   name: folder.folder_name,
-  contents: folder.contents
+  notes: folder.contents
 })
 
 foldersRouter
@@ -22,9 +22,9 @@ foldersRouter
   })
 
   .post(bodyParser, (req, res, next) => {
-    const { name, contents } = req.body
-    const newFolder = { name } 
-
+    const { name, notes } = req.body
+    const newFolder = { name, notes } 
+    console.log(newFolder)
     for (const field of ['name']) {
       if (!req.body[field]) {
         console.error(`${field} is required`)
