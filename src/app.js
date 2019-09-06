@@ -3,11 +3,14 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
+const {CLIENT_ORIGIN} = require('./config');
+// const pg = require('pg')
 const { NODE_ENV, DB_URL } = require('./config')
 const notesService = require('./noteful/notes-service')
 const foldersService = require('./noteful/folders-service')
 const notesRouter = require('./noteful/notes-router')
 const foldersRouter = require('./noteful/folders-router')
+const {API_BASE_URL} = require('./config');
 
 const app = express()
 
@@ -26,15 +29,4 @@ req.app.get('db').from('notes').select('*').then(console.log)
   res.send('Hello, world!')
 })
 
-// function errorHandler(error, req, res, next) {
-//   let response
-//   if (process.env.NODE_ENV === 'production') {
-//   response = { error: { message: 'server error' } }
-//   } else {
-//     console.error(error)
-//   response = { message: error.message, error }
-//   }
-//   res.status(500).json(response)
-// }
- 
 module.exports = app

@@ -4,7 +4,3 @@ module.exports = {
     DB_URL: process.env.DATABASE_URL || 'postgresql://rachelemilyperez@localhost/noteful',
     API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'https://noteful-app.reperez120.now.sh/'
 }
-
-
-    // 'https://rocky-gorge-29682.herokuapp.com/'
-  
